@@ -1,10 +1,7 @@
-# EcoInvest. (BLACKROCK HACKKNIGHT HACKATHON)
+# EcoInvest. 
+# Problem Statement -
 
-EcoInvest is a FinTech Application developed by a team of 4 members that won the Campus Hackathon (HackKnight) organised by BlackRock.
 
-## Theme and Problem Statement -
-
-The Theme was ***Technology For Financial Planning***
 
 The Problem Statement was - 
 "Developing a Robust Framework for Evaluating and Promoting Sustainable Investment Strategies to Achieve Long-Term Environmental, Social and Economic Returns in an Evolving Global Financial Landscape"
