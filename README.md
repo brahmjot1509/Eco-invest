@@ -1,9 +1,4 @@
 # EcoInvest. 
-# Problem Statement -
-
-
-
-The Problem Statement was - 
 "Developing a Robust Framework for Evaluating and Promoting Sustainable Investment Strategies to Achieve Long-Term Environmental, Social and Economic Returns in an Evolving Global Financial Landscape"
 
 ## Idea and Approach -
