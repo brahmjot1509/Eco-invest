@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="main-rat">
+    <div id="main-div-cont">
+
+        <div id="rating-tit-content">
+            <h1 id="rating-tit">ESG Insight Engine</h1>
+        </div>
+
+        <p>
+            Uncover ESG Ratings through Natural Language Processing</p><p>Delving into Environmental, Social, and Governance Aspects
+        </p>
+        <form action="#" method="post" id="rating-form">
+            <select id="rating-question" name="symbol-rating">
+                <option value="No Stock Was Selected">Search for a company</option>
+                {% for stock in data.index %}
+                    <option value="{{ stock }}">{{ stock }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Search" id="rating-submit">
+        </form>
+    </div>
+    
+</main>
+<script type="text/javascript">
+      $("#rating-question").select2({
+        dropdownParent: $('#rating-form')
+      });
+</script>
+{% endblock %}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ESG Investing</title>
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+        <!--Scripts for dropdown searchbox of ratings and loading page of allocation-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+        <script type="text/javascript">// <![CDATA[
+            function loading(){
+                $("#loading").show();
+                $("#content").hide();
+            }
+    // ]]></script>
+
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logomain">
+                <img class="imglogo" src="{{ url_for('static', filename='img/logo.png') }}"> 
+                <h1 class="logo"><a href="{{ url_for('index') }}">EcoInvest.</a></h1>
+            </div>
+            <ul class="nav-links">
+                <a href="{{ url_for('index') }}"><li class="active">Home</li></a>
+                <a href="{{ url_for('ratings') }}"><li>Ratings</li></a>
+                <a href="{{ url_for('insights') }}"><li>Insight Engine </li></a>
+                <a href="{{ url_for('allocation') }}"><li>Portfolio Allotment</li></a>
+            </ul>
+        </nav>
+
+        <!--Main Home Page Content -->
+        <header>
+        {% block content %}
+            <!-- Main Title and Buttons -->
+            <div class="header-content">
+                <h1>EcoInvest.</h1>
+                <h4>Invest in the future you believe in, sustainably.</h4>
+                <a href="{{ url_for('allocation') }}" class="ctn1">PORTFOLIO ALLOTMENT</a>
+                <a href="{{ url_for('ratings') }}" class="ctn">VIEW ESG RATINGS</a>
+            </div>
+            <div class="project-desc">
+                <div class="how">
+                    <h1>HOW?</h1>
+                </div>
+                <div class="how-para">
+                    <p> Our cutting-edge app combines the power of ESG analysis and advanced NLP techniques to provide you with comprehensive insights into companies' environmental, social, and governance practices.</p>
+                    <p>Make informed investment decisions that align with your values and contribute to a more sustainable future. Explore a world of opportunities where financial growth meets responsible investing.</p>
+                    <p>ESG analysis integrates these factors to assess the overall sustainability and ethical performance of companies or investment opportunities. Investors use this analysis to make more informed decisions that align with their values and long-term objectives.</p>
+                </div>
+            </div>
+        </header>
+        <div class="bada-div">
+            <div class="small-1">
+                <div >
+                    <img src="https://images.pexels.com/photos/910307/pexels-photo-910307.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="630px" height="300px" alt="environment">
+                </div>
+                <div class="card1">
+                    <h2 class="crit">(E) Environmental Criteria </h2>
+                    <p class="crit-para">Environmental criteria are concerned with the environmental stewardship of a corporation. The environmental component of ESG investigates how a firm uses natural resources and affects the environment. Climate change is the primary concern of environmental elements.</p>
+                </div>
+            </div>
+            <div class="small-1">
+                <div class="card1">
+                    <h2 class="crit">(S) Social Criteria</h2>
+                    <p class="crit-para">Social criteria are concerned with a company's social obligation. The social component of ESG investigates how a firm handles its connections with its staff and other community stakeholders. The social ramifications of business choices are the primary concern of social considerations.</p>
+                </div>
+                <div>
+                    <img src="https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="630px" height="300px" alt="social">
+                </div>
+            </div>
+            <div class="small-1">
+                <div >
+                    <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="630px" height="300px" alt="governance">
+                </div>
+                <div class="card1">
+                    <h2 class="crit">(G) Governance Criteria</h2>
+                    <p class="crit-para">The integrity of a company's governance system is the focus of governance criteria. ESG governance investigates whether a company's leadership operates within an ethical and responsible framework. The primary focus of governance considerations is leadership accountability.</p>
+                </div>
+            </div>
+
+        {% endblock %}
+    </body>
+</html>

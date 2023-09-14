@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<main id="stock-rating-main">
+    <div id="stock-title-content">
+        <h1 id="stock-title"><i>Company:</i> '{{ companyName }}' </h1>
+    </div>
+
+    <h2>ESG INSIGHTS:</h2>
+
+    <div id="esg-insights">
+        <table class="nlp-1">
+            <tr>
+                <th>Category</th>
+                <th>Score</th>
+            </tr>
+            {% for category, numScore in num_data.items() %}
+            <tr>
+                <td>{{ category }}</td>
+                <td>{{ numScore }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table class="nlp-1">
+            <tr>
+                <th>Category</th>
+                <th>Grade</th>
+            </tr>
+            {% for category, letterScore in letter_data.items() %}
+            <tr>
+                <td>{{ category }}</td>
+                <td>{{ letterScore }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="download-button">
+        <a href="{{ url_for('download_excel') }}" class="btn btn-primary custom-btn">Download Excel</a>
+        <div class="additional-text"><b>NOTE :</b>This Excel File contains the values of desired factors related to Environmental,Social and Governance criteria,that were considered for evaluating the calcualtion of Total ESG Score and Grade.</div>
+    </div>
+    <div class="reference">
+        <h3>References : MSCI Grading System</h3>
+        <div class="msci-image">
+            <img src="https://images.ctfassets.net/7xz1x21beds9/58un2IOQKddBcF3mGRB9zH/9d6606545417133bb7f41df21802ab51/MSCI_ESG_Rating_Scale.png?w=928&h=444&q=90&fm=png" width="560px" height="280px" alt="msci grading">
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}
+

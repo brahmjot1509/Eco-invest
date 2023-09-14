@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<main id="main-ratings">
+    <div id="main-div-content">
+
+        <div id="rating-title-content">
+            <h1 id="rating-title">ESG Stock Ratings</h1>
+        </div>
+
+        <p>
+            ESG stands for environmental, social, and governance.</p>
+            <p>An ESG rating is a measure of a company performance along these criteria.
+        </p>
+        <form action="#" method="post" id="rating-form">
+            <select id="rating-question" name="symbol-rating">
+                <option value="No Stock Was Selected">Search for a company</option>
+                {% for stock in data.index %}
+                    <option value="{{ stock }}">{{ stock }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Search" id="rating-submit">
+        </form>
+    </div>
+</main>
+<script type="text/javascript">
+      $("#rating-question").select2({
+        dropdownParent: $('#rating-form')
+      });
+</script>
+{% endblock %}
+
++

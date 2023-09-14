@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div id="loading">
+    <div>
+        <img src="https://www.oppenheimer.com/_assets/images/map/loader.gif" alt="this slowpoke moves"  width="75" />
+        <p>Parsing the Pdf...</p>
+        <p> Please wait! This might take a while.</p>
+    </div>
+</div>
+<main id="main-rat">
+    <div id="main-div-cont">
+
+        <div id="rating-tit-content">
+            <h1 id="rating-tit">ESG Insight Engine</h1>
+        </div>
+
+        <p>
+            {{ stock }}
+        </p>
+        <br>
+        <table class="data-table">
+            <tr>
+                <th>Report Name</th>
+                <th>PDF Link</th>
+                <th>Generate ESG</th>
+            </tr>
+            {% for report_name, pdf_link in symbolegs.items() %}
+            <tr>
+                <td>{{ report_name }}</td>
+                <td><a class="mya" href="{{ pdf_link }}" target="_blank">Go to PDF</a></td>
+                <td>
+                    <form action="#" method="post">
+                        <input type="hidden" name="stock" value="{{ stock }}">
+                        <input type="hidden" name="pdflink" value="{{ pdf_link }}">
+                        <button type="submit" class="generate-button" onclick="loading()">Generate ESG</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <br>
+    </div>
+</main>
+{% endblock %}
